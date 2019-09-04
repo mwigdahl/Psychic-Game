@@ -43,5 +43,5 @@ document.onkeyup = function (event) {
     document.getElementById("wins-text").textContent = "Wins: " + wins;
     document.getElementById("losses-text").textContent = "Losses: " + losses;
     document.getElementById("guessesleft-text").textContent = "Guesses Left: " + guessesLeft;
-    document.getElementById("userguess-text").textContent = "Your guess: " + userGuess; // want to show input array "userChoice[i]"
+    document.getElementById("userguess-text").textContent = "Your guesses so far: " + userGuess; // want to show input array "userChoice[i]"
 };
