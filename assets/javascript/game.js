@@ -28,26 +28,27 @@ document.onkeyup = function (event) {
 
     addUserChoice();
 
-    if (userChoice.indexOf(userGuess) > -1) {
-
-
-        if (userGuess === computerPick) {
-            // if user guess correct, give win and reset guesses left
-            wins++;
-            guessesLeft = 10;
-        } else if (userGuess !== computerPick && guessesLeft > 0) {
-            // if selection is wrong and their are still guesses left, remove a guess
-            guessesLeft--;
-        } else if (userGuess !== computerPick && guessesLeft === 0) {
-            // if selection is wrong and no guesses left, add a loss and reset guesses
-            losses++;
-            guessesLeft = 10;
-        } else {
-            return;
-        }
+    if (computerChoices.indexOf(userGuess) > -1) {
 
     } else {
         alert('This is not a letter.');
+    }
+
+    if (userGuess === computerPick) {
+        // if user guess correct, give win and reset guesses left
+        wins++;
+        guessesLeft = 10;
+        userChoice = [];
+    } else if (userGuess !== computerPick && guessesLeft > 0) {
+        // if selection is wrong and their are still guesses left, remove a guess
+        guessesLeft--;
+    } else if (userGuess !== computerPick && guessesLeft === 0) {
+        // if selection is wrong and no guesses left, add a loss and reset guesses
+        losses++;
+        guessesLeft = 10;
+        userChoice = [];
+    } else {
+        return;
     }
 
     // Display results on web page
